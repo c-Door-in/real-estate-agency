@@ -51,6 +51,7 @@ class Flat(models.Model):
         User,
         verbose_name='Кто лайкнул',
         related_name='liked_flats',
+        blank=True,
     )
 
     def __str__(self):
