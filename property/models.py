@@ -61,12 +61,14 @@ class Complaint(models.Model):
     user = models.ForeignKey(
         User,
         verbose_name='Кто жаловался',
+        related_name='complaints',
         on_delete=models.CASCADE,
         db_index=True,
     )
     flat = models.ForeignKey(
         Flat,
         verbose_name='Квартира, на которую пожаловались',
+        related_name='complaints',
         on_delete=models.CASCADE,
         db_index=True,
     )
