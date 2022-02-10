@@ -15,7 +15,6 @@ class Flat(models.Model):
     new_building = models.NullBooleanField('Новостройка')
     description = models.TextField('Текст объявления', blank=True)
     price = models.IntegerField('Цена квартиры', db_index=True)
-
     town = models.CharField(
         'Город, где находится квартира',
         max_length=50,
@@ -66,14 +65,12 @@ class Complaint(models.Model):
         verbose_name='Кто жаловался',
         related_name='complaints',
         on_delete=models.CASCADE,
-        db_index=True,
     )
     flat = models.ForeignKey(
         Flat,
         verbose_name='Квартира, на которую пожаловались',
         related_name='complaints',
         on_delete=models.CASCADE,
-        db_index=True,
     )
     text = models.TextField('Текст жалобы', blank=True, db_index=True)
 
