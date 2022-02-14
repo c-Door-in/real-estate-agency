@@ -57,7 +57,7 @@ class Flat(models.Model):
 
 
 class Complaint(models.Model):
-    user = models.ForeignKey(
+    client = models.ForeignKey(
         User,
         verbose_name='Кто жаловался',
         related_name='complaints',
@@ -72,7 +72,7 @@ class Complaint(models.Model):
     text = models.TextField('Текст жалобы', blank=True, db_index=True)
 
     def __str__(self):
-        return f'{self.user}, {self.flat}'
+        return f'{self.client}, {self.flat}'
 
 
 class Owner(models.Model):

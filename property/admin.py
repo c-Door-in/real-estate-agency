@@ -36,7 +36,7 @@ class ComplaintAdmin(admin.ModelAdmin):
     list_display = (
         'text',
     )
-    raw_id_fields = ('user', 'flat')
+    raw_id_fields = ('client', 'flat')
 
 
 class OwnerAdmin(admin.ModelAdmin):
